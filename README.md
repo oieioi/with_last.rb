@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/with_last.svg)](https://badge.fury.io/rb/with_last)
+
 # with_last.rb
 
 Add `each_with_last` to `Array`.
@@ -17,7 +19,7 @@ And then execute:
 ```ruby
 [1,2,3,4,5,6].each_with_last { |item, is_last|
   puts item
-  puts 'to be continued' unless is_last
+  puts is_last ? 'done' : 'to be continued'
 }
 ```
 
