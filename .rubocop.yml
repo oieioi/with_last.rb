@@ -1,0 +1,18 @@
+AllCops:
+  TargetRubyVersion: 2.3
+
+Layout/LineLength:
+  # defualt: 80
+  Max: 160
+  IgnoredPatterns:
+    - '^\s*#'
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
