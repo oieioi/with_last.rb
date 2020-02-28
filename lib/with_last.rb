@@ -1,14 +1,8 @@
-require "with_last/version"
+# frozen_string_literal: true
 
+require 'with_last/version'
+require 'with_last/core_ext'
+
+# with_last namespace
 module WithLast
-  class Error < StandardError; end
-  class ::Array
-    def each_with_last
-      each_with_index { |item, index| yield(item, last?(index)) }
-    end
-
-    def last?(index)
-      size == (index + 1)
-    end
-  end
 end
