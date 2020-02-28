@@ -5,3 +5,6 @@ gemspec
 
 gem "rake", "~> 12.0"
 gem "rspec", "~> 3.0"
+gem "byebug"
+
+gem "rubocop", "~> 0.80.0"
