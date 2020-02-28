@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['oieioi']
   spec.email         = ['atsuinatsu.samuifuyu@gmail.com']
 
-  spec.summary       = 'Add `each_with_last` to Array'
-  spec.description   = 'Add `each_with_last` to Array'
+  spec.summary       = 'Add `with_last` to Enumerator and `each_with_last` to Enumerable'
+  spec.description   = 'Add `with_last` to Enumerator and `each_with_last` to Enumerable'
   spec.homepage      = 'https://github.com/oieioi/with_last.rb'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
