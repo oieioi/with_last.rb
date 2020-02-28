@@ -1,6 +1,6 @@
-RSpec.describe ArrayWithLast do
+RSpec.describe WithLast do
   it "has a version number" do
-    expect(ArrayWithLast::VERSION).not_to be nil
+    expect(WithLast::VERSION).not_to be nil
   end
 
   it "does something useful" do
