@@ -2,8 +2,7 @@
 
 # with_last.rb
 
-- Add `each_with_last` to `Array`.
-- (wip) Add `with_last` to `Enumerable`.
+Add `with_last` method to `Enumerator` class and `each_with_last` to `Enumerable` module.
 
 ## Installation
 
