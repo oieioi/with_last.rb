@@ -1,4 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/with_last.svg)](https://badge.fury.io/rb/with_last)
+![Ruby](https://github.com/oieioi/with_last.rb/workflows/Ruby/badge.svg)
 
 # with_last.rb
 
