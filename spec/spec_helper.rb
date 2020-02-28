@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "array_with_last"
+require "with_last"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
