@@ -17,17 +17,26 @@ And then execute:
 ## Usage
 
 ```ruby
-[1,2,3,4,5,6].each_with_last { |item, is_last|
-  puts item
-  puts is_last ? 'done' : 'to be continued'
+[1,2,3].each_with_last { |item, last|
+  print item
+  print last ? 'done!' : '->'
 }
+
+# "1->2->3done!"
+
+[1,2,3].map.with_last { |item, last| "#{item * item}#{last ? '.' : ''}" }.join(',')
+
+# => "1,4,9."
 ```
 
-
 ```erb
-<% some_list.each_with_last do |item, is_last| %>
-  <%= item %><%= is_last ? '.' : ',' %>
+<% %w[hoge fuga piyo].each_with_last do |item, is_last| %>
+  <%= item %><%= is_last ? '.' : ', ' %>
 <% end %>
+
+<!--
+hoge, fuga, piyo.
+-->
 ```
 
 ## License
