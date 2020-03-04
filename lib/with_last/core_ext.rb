@@ -7,8 +7,10 @@ class Enumerator
   #   [1,2].each.with_last { |item, is_last| puts [item, is_last] }
   #   # => [1, false] [2, true]
   #
+  #
   #   [1,2].map.with_last { |item, is_last| "#{item}#{is_last ? '.' : ', '}" }.join
   #   # => "1, 2."
+  #
   #
   #   %w[hoge fuga].map.with_index.with_last { |item, index, is_last| "#{index}: #{item}#{is_last ? '.' : ', '}" }.join
   #   # => "0:hoge, 1:fuga."
@@ -16,14 +18,25 @@ class Enumerator
     return to_enum :with_last unless block_given?
 
     each do |*args|
-      begin
-        self.next
-        peek
-        yield(*args, false)
-      rescue StopIteration => _e
-        yield(*args, true)
-      end
+      self.next
+      yield(*args, last?)
     end
+  end
+
+  # Returns whether the enumerator is last.
+  #
+  #   e = [1,2].to_enum
+  #   e.last? # => false
+  #   e.next  # => 1
+  #   e.last? # => false
+  #   e.next  # => 2
+  #   e.last? # => true
+  #
+  def last?
+    peek
+    false
+  rescue StopIteration => _e
+    true
   end
 end
 

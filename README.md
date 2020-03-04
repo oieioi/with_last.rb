@@ -3,7 +3,9 @@
 
 # with_last.rb
 
-Add `with_last` method to `Enumerator` class and `each_with_last` to `Enumerable` module.
+- Add `with_last` method to `Enumerator` class.
+- Add `last?` method to `Enumerator` class.
+- Add `each_with_last` to `Enumerable` module.
 
 ## Installation
 
@@ -17,27 +19,51 @@ And then execute:
 
 ## Usage
 
+### `Enumerable#each_with_last`
+
 ```ruby
 [1,2,3].each_with_last { |item, last|
-  print item
-  print last ? 'done!' : '->'
+  print "#{item}#{last ? '!' : ' => '}"
 }
-
-# "1->2->3done!"
-
-[1,2,3].map.with_last { |item, last| "#{item * item}#{last ? '.' : ''}" }.join(',')
-
-# => "1,4,9."
 ```
+
+it prints `1 => 2 => 3!`
+
+### `Enumerator#with_last`
+
+```ruby
+
+[1,2,3]
+  .map
+  .with_last { |item, last| "#{item * item}#{last ? '.' : ''}" }
+  .join(',')
+```
+
+it returns `"1,4,9."`
+
+### `Enumerator#last?`
+
+```ruby
+e = [1,2].to_enum
+e.last? # => false
+e.next  # => 1
+e.last? # => false
+e.next  # => 2
+e.last? # => true
+```
+
+### in ERB
 
 ```erb
 <% %w[hoge fuga piyo].each_with_last do |item, is_last| %>
   <%= item %><%= is_last ? '.' : ', ' %>
 <% end %>
+```
 
-<!--
+it renders;
+
+```html
 hoge, fuga, piyo.
--->
 ```
 
 ## License
